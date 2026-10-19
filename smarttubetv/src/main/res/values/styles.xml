@@ -22,6 +22,8 @@
     <!-- Decrease header spacing in BrowseView -->
     <style name="BrowseHeaderStyle" parent="Widget.Leanback.Headers.VerticalGridView">
         <item name="android:verticalSpacing">@dimen/browse_headers_vertical_spacing</item>
+        <!-- YouTube TV skin: centraliza ícone de 32dp no trilho de 78dp -->
+        <item name="android:paddingStart">23dp</item>
     </style>
 
     <!-- Color scheme: Teal (Default) -->
@@ -117,7 +119,7 @@
     <style name="App.Theme.DarkGrey.Browse" parent="App.Theme.Leanback.Browse">
         <item name="android:windowBackground">@color/scheme_grey_shelf_background_dark</item>
         <item name="brandColor">@color/scheme_grey_background_dark</item>
-        <item name="brandAccentColor">@color/semi_red</item>
+        <item name="brandAccentColor">@color/yttv_orb</item>
         <item name="cardProgressStyle">@style/ProgressBarHorizontal.Dark</item>
         <item name="shelfBackground">@color/scheme_grey_shelf_background_dark</item>
         <item name="cardDefaultBackground">@color/scheme_grey_card_background_dark</item>

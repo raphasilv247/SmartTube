@@ -16,7 +16,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="3dp"
-        android:layout_marginStart="10dp"
+        android:layout_marginStart="26dp"
 
         android:singleLine="true"
         android:maxWidth="150sp"

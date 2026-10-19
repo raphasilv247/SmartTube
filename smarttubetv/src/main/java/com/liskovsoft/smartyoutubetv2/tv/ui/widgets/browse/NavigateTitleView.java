@@ -61,6 +61,7 @@ public class NavigateTitleView extends TitleView implements OnDataChange, Accoun
     private DateTimeView mGlobalClock;
     private DateTimeView mGlobalDate;
     private SearchOrbView mSearchOrbView;
+    private TextView mSearchPill; // YouTube TV skin: "Pesquisar" pill next to the search orb
     private boolean mInitDone;
     private int mFlags = FULL_VIEW_VISIBLE;
     private int mIconWidth;
@@ -172,6 +173,14 @@ public class NavigateTitleView extends TitleView implements OnDataChange, Accoun
         if (mIsGlobalClockEnabled) {
             mGlobalDate.setVisibility(mBrandingVisibility);
         }
+
+        syncSearchPill();
+    }
+
+    private void syncSearchPill() {
+        if (mSearchPill != null && mSearchOrbView != null) {
+            mSearchPill.setVisibility(mSearchOrbView.getVisibility());
+        }
     }
 
     private void init() {
@@ -193,6 +202,10 @@ public class NavigateTitleView extends TitleView implements OnDataChange, Accoun
         MainUIData mainUIData = MainUIData.instance(getContext());
 
         mSearchOrbView = findViewById(R.id.title_orb);
+        mSearchPill = findViewById(R.id.search_pill);
+        if (mSearchPill != null) {
+            mSearchPill.setOnClickListener(v -> mSearchOrbView.performClick());
+        }
 
         mAccountView = findViewById(R.id.account_orb);
         mAccountView.setOnOrbClickedListener(v -> AccountSelectionPresenter.instance(getContext()).nextAccountOrDialog());
@@ -236,6 +249,7 @@ public class NavigateTitleView extends TitleView implements OnDataChange, Accoun
         mLanguageView.setVisibility(mIsLanguageViewEnabled ? View.VISIBLE : View.GONE);
         mGlobalClock.setVisibility(mIsGlobalClockEnabled ? View.VISIBLE : View.GONE);
         mGlobalDate.setVisibility(mIsGlobalClockEnabled ? View.VISIBLE : View.GONE);
+        syncSearchPill();
 
         Utils.postDelayed(this::updateAccountIcon, 1_000); // give a time to engine to fetch an updated icon url
         //updateAccountIcon();

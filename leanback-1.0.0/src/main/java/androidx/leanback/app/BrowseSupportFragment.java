@@ -1451,8 +1451,16 @@ public class BrowseSupportFragment extends BaseSupportFragment {
         View containerList;
         containerList = mHeadersSupportFragment.getView();
         lp = (MarginLayoutParams) containerList.getLayoutParams();
-        lp.setMarginStart(onScreen ? 0 : -mContainerListMarginStart);
+        // MOD (YouTube TV skin): keep a narrow icon rail visible instead of hiding the headers
+        lp.setMarginStart(0);
+        lp.width = onScreen
+                ? getResources().getDimensionPixelSize(R.dimen.lb_browse_headers_width)
+                : getResources().getDimensionPixelSize(R.dimen.yttv_rail_width);
         containerList.setLayoutParams(lp);
+        View fadeEdge = containerList.findViewById(R.id.fade_out_edge);
+        if (fadeEdge != null) {
+            fadeEdge.setVisibility(onScreen ? View.VISIBLE : View.GONE);
+        }
     }
 
     void showHeaders(boolean show) {
@@ -1464,7 +1472,8 @@ public class BrowseSupportFragment extends BaseSupportFragment {
 
     private void expandMainFragment(boolean expand) {
         MarginLayoutParams params = (MarginLayoutParams) mScaleFrameLayout.getLayoutParams();
-        params.setMarginStart(!expand ? mContainerListMarginStart : 0);
+        // MOD (YouTube TV skin): rows start after the icon rail when headers are collapsed
+        params.setMarginStart(!expand ? mContainerListMarginStart : getResources().getDimensionPixelSize(R.dimen.yttv_rail_width));
         mScaleFrameLayout.setLayoutParams(params);
         mMainFragmentAdapter.setExpand(expand);
 
