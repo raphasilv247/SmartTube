@@ -6,26 +6,26 @@
     <!-- Common colors -->
     <color name="default_background_gradient_start">#000000</color>
     <color name="default_background_gradient_end">#DDDDDD</color>
-    <color name="fastlane_background">#0096a6</color>
-    <color name="fastlane_background_dark">#004B53</color>
+    <color name="fastlane_background">#606060</color>
+    <color name="fastlane_background_dark">#0F0F0F</color>
     <color name="default_light_grey">#343434</color>
     <color name="search_opaque">#0096a6</color>
     <color name="search_opaque_yellow">#ffaa3f</color>
 
     <!-- Card view colors -->
-    <color name="card_selected_background_white">#FFFFFF</color>
+    <color name="card_selected_background_white">#00000000</color>
     <color name="card_selected_background_white_grey">#D3D3D3</color>
     <color name="card_selected_background_yellow">#ffaa3f</color>
     <color name="card_selected_background_grey">#343434</color>
     <color name="card_selected_text_black">#000000</color>
-    <color name="card_selected_text_grey">#343434</color>
+    <color name="card_selected_text_grey">#F1F1F1</color>
     <color name="card_default_background">#0096a6</color>
-    <color name="card_default_background_dark">#004B53</color>
-    <color name="card_default_text">#FFFFFF</color>
+    <color name="card_default_background_dark">#00000000</color>
+    <color name="card_default_text">#B7B7B7</color>
 
     <!-- Browse fragment colors -->
     <color name="shelf_background">#282828</color>
-    <color name="shelf_background_dark">#131313</color>
+    <color name="shelf_background_dark">#000000</color>
     <color name="icon_background">#4A4F51</color>
     <color name="icon_alt_background">#2A2F51</color>
     <color name="player_background">#FF000000</color>
@@ -60,12 +60,21 @@
     <color name="foreground_material_light_mod">@android:color/black</color>
 
     <!-- Default Orb buttons colors: search, accounts, search settings etc -->
-    <color name="orb_color">@color/grey</color>
-    <color name="orb_bright_color">@color/grey</color>
-    <color name="orb_icon_color">@color/white</color>
+    <color name="orb_color">#373737</color>
+    <color name="orb_bright_color">#909090</color>
+    <color name="orb_icon_color">#F1F1F1</color>
 
     <!-- Search page mic button color -->
     <color name="lb_speech_orb_not_recording">@color/orb_color</color>
     <color name="lb_speech_orb_not_recording_pulsed">@color/orb_bright_color</color>
     <color name="lb_speech_orb_not_recording_icon">@color/orb_icon_color</color>
+
+    <!-- YouTube TV skin (extraído de ytv2.zip) -->
+    <color name="yttv_text_primary">#F1F1F1</color>
+    <color name="yttv_text_secondary">#B7B7B7</color>
+    <color name="yttv_focus_ring">#F1F1F1</color>
+    <color name="yttv_search_bg">#373737</color>
+    <color name="yttv_badge_bg">#060606</color>
+    <color name="lb_search_bar_text">#F1F1F1</color>
+    <color name="lb_search_bar_hint">#B7B7B7</color>
 </resources>

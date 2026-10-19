@@ -101,6 +101,12 @@ public class VideoCardPresenter extends LongClickPresenter {
         // NOTE: has visual bug with rounded corners
         //view.setBackgroundColor(backgroundColor);
 
+        // YouTube TV skin: white focus ring around the thumbnail only
+        View mainImage = view.findViewById(R.id.main_image);
+        if (mainImage != null && VERSION.SDK_INT >= 23) {
+            mainImage.setForeground(selected ? ContextCompat.getDrawable(view.getContext(), R.drawable.lb_card_outline) : null);
+        }
+
         View infoField = view.findViewById(R.id.info_field);
         if (infoField != null) {
             infoField.setBackgroundColor(backgroundColor);
